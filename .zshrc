@@ -1,6 +1,5 @@
 #!/usr/bin/zsh
 umask 022
-/usr/bin/kdestroy -A -q
 set -o noclobber
 set -o vi
 ulimit -s unlimited
@@ -31,7 +30,7 @@ export COLORTERM="yes"
 stty erase "^?"
 mesg y
 export GREP_COLOR='00;38;5;226'
-export GREP_OPTIONS='--color=auto'
+# export GREP_OPTIONS='--color=auto'
 alias cd..='cd ..'
 alias lhidf='ls -d .* | grep -v "\/"'
 alias lhidd='ls -d .*/'
@@ -69,60 +68,8 @@ export HOME="/home/$USER"
 alias tmp="cd $MY"
 alias python="python3"
 
-#turbomole
-export TURBODIR=/psi/turbomole-6.2/TURBOMOLE
-source ${TURBODIR}/Config_turbo_env
-export PATH=/psi/turbomole-6.2/calculate_2.2:/psi/turbomole-6.2/MoleControl_2.1:/psi/turbomole-6.2/TmoleX301_64/symlinks:$PATH
 
-#dftb+
-PP="dft/dftb+_1.2"
-PAI=$(echo $PATH | grep /psi/$PP | wc -c)
-if [[ $PAI == 0 ]]; then
-#        export PATH=/psi/$PP:$PATH
-fi
 
-#gdftp
-PP="dft/gdftb"
-PAI=$(echo $PATH | grep /psi/$PP/bin | wc -c)
-if [[ $PAI == 0 ]]; then
-        export PATH=/psi/$PP/bin:$PATH
-fi
-
-#openbabel
-PP="dft/openbabel-2.3.1"
-PAI=$(echo $PATH | grep /psi/$PP/bin | wc -c)
-if [[ $PAI == 0 ]]; then
-        export PATH=/psi/$PP/bin:$PATH
-fi
-if [[ -z "${LD_LIBRARY_PATH}" ]] ; then 
-        export LD_LIBRARY_PATH="/psi/${pp}/openbabel-2.3.1/lib:${LD_LIBRARY_PATH}"
-else 
-	export LD_LIBRARY_PATH="/psi/${pp}/openbabel-2.3.1/lib"
-fi
-
-#dptools+ase
-PP="dft/dptools-0.1"
-ASE="/temp/$USER/ase"
-PAI=$(echo $PATH | grep /psi/$PP/bin | wc -c)
-if [[ $PAI == 0 ]]; then
-        export PATH=/psi/$PP/bin:$ASE/bin:$PATH
-fi
-if [[ -z "${PYTHONPATH}" ]] ; then
-    export PYTHONPATH="/psi/dft/dptools-0.1/lib/python2.6/site-packages:$ASE/lib/python2.7/site-packages:$PYTHONPATH"
-else
-    export PYTHONPATH="/psi/dft/dptools-0.1/lib/python2.6/site-packages:$ASE/lib/python2.7/site-packages"
-fi
-
-#nwchem
-PP="dft/nwchem-6.0"
-PAI=$(echo $PATH | grep /psi/$PP/bin | wc -c)
-if [[ $PAI == 0 ]]; then
-        export PATH=/psi/$PP/bin:$PATH
-fi
-
-if [[ ! -e "$HOME/.nwchemrc" ]] ;  then
-        ln -s /psi/dft/nwchem-6.0/data/default.nwchemrc $HOME/.nwchemrc
-fi
 
 unset PP PAI
 
