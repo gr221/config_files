@@ -67,6 +67,9 @@ export HOME="/home/$USER"
 
 alias tmp="cd $MY"
 alias python="python3"
+alias la="ls -a"
+alias ll="ls -l"
+alias lsa="ls -la"
 
 
 
