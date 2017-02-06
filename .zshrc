@@ -70,6 +70,7 @@ alias python="python3"
 alias la="ls -a"
 alias ll="ls -l"
 alias lsa="ls -la"
+alias sound="amixer set Master unmute"
 
 
 
