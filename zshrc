@@ -32,6 +32,7 @@ mesg y
 export GREP_COLOR='00;38;5;226'
 # export GREP_OPTIONS='--color=auto'
 alias cd..='cd ..'
+alias ls='ls --color=auto'
 alias lhidf='ls -d .* | grep -v "\/"'
 alias lhidd='ls -d .*/'
 alias k9='kill -9'
@@ -44,11 +45,11 @@ alias rmtilda='rm -rf *~'
 alias delzero='rm `find . -type f -size 0k`'
 alias cltex='rm -rf *.log *.dvi *.aux *.toc *.bbl *.out *.blg *.nav *.snm *.vrb'
 alias unset_omp="export OMP_DYNAMIC='' ; export OMP_NESTED='' ; export OMP_SCHEDULE='' ; export OMP_NUM_THREADS='' ;"
-alias set_omp="export OMP_DYNAMIC=true; export OMP_NESTED=true; export OMP_SCHEDULE='DYNAMIC'; export OMP_NUM_THREADS=`
-_AA=$(lscpu  | grep 'Thread(s) per core' |  cut -d ":" -f 2 | tr -d ' ');
-_BB=$(lscpu  | grep 'Core(s) per socket' |  cut -d ":" -f 2 | tr -d ' ');
-_CC=$(lscpu  | grep -i 'socket(s)' |  cut -d ":" -f 2 | tr -d ' ');
-echo $(($_AA * $_BB * $_CC ))`"
+# alias set_omp="export OMP_DYNAMIC=true; export OMP_NESTED=true; export OMP_SCHEDULE='DYNAMIC'; export OMP_NUM_THREADS=`
+# _AA=$(lscpu  | grep 'Thread(s) per core' |  cut -d ":" -f 2 | tr -d ' ');
+# _BB=$(lscpu  | grep 'Core(s) per socket' |  cut -d ":" -f 2 | tr -d ' ');
+# _CC=$(lscpu  | grep -i 'socket(s)' |  cut -d ":" -f 2 | tr -d ' ');
+# echo $(($_AA * $_BB * $_CC ))`"
 
 export MY="/temp/$USER"
 export MYOPT="$MY/opt"
