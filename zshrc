@@ -31,6 +31,7 @@ stty erase "^?"
 mesg y
 export GREP_COLOR='00;38;5;226'
 # export GREP_OPTIONS='--color=auto'
+alias pacman='sudo pacman'
 alias cd..='cd ..'
 alias ls='ls --color=auto'
 alias lhidf='ls -d .* | grep -v "\/"'
