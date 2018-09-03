@@ -75,6 +75,8 @@ alias lsa="ls -la"
 alias sound="amixer set Master unmute"
 alias gcc99="gcc -Wall -std=c99"
 alias ytdown="youtube-dl --ignore-errors -x --audio-format best --audio-quality 0"
+alias cond="cd /condmat/grifoni/frm60152"
+# alias matlab="matlab -nosoftwareopengl"
 
 
 

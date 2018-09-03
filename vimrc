@@ -9,8 +9,8 @@ syntax on
 filetype plugin indent on
 
 set autoindent
-set foldmethod=syntax   "Set folding according to syntax
 set expandtab		"Use spaces instead of tabs
+"set foldmethod=syntax   "Set folding according to syntax
 set softtabstop =4 	"Tab indents 4 spaces
 set shiftwidth =4 	" >> indents 4 spaces
 set shiftround 		" >> indents to next multiple of shiftwidth
