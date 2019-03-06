@@ -43,11 +43,15 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_c_include_dirs = ['/usr/avr/include']
+" let g:syntastic_disabled_filetypes=['tex']
+let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes':[], 'passive_filetypes':[]}
+noremap <C-w>e :SyntasticCheck<CR>
+noremap <C-w>f :SyntasticToggleMode<CR>
 
 "Add c++11 support for syntastic
 let g:syntastic_cpp_compiler ='g++'
@@ -77,5 +81,9 @@ let fortran_do_enddo=1
 autocmd InsertEnter * let w:last_fdm=&foldmethod | setlocal foldmethod=manual
 autocmd InsertLeave * let &l:foldmethod=w:last_fdm
 
-" " try stuff for tmux
-" set t_ut=
+" Stuff for vimtex
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_general_options_latexmk = '--unique'
+
+autocmd BufRead,BufNewFile *.cls filetype=tex
