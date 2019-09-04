@@ -1,4 +1,3 @@
-execute pathogen#infect()
 inoremap jk <ESC>
 set nocompatible
 
@@ -85,5 +84,7 @@ autocmd InsertLeave * let &l:foldmethod=w:last_fdm
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
+let g:Tex_ShowErrorContext = 0
 
-autocmd BufRead,BufNewFile *.cls filetype=tex
+autocmd BufRead,BufNewFile *.cls set filetype=tex
+autocmd BufRead,BufNewFile *.tex set filetype=tex

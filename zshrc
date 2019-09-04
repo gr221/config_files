@@ -41,7 +41,7 @@ alias ls-r="ls --author --color --show-control-chars -i -F -l -a -h"
 alias cpucheck='ps -e u | sort -g -k 3 | tail'
 alias memcheck='ps -e u | sort -g -k 4 | tail'
 alias mstat='ps -e u | grep R'
-alias rm='rm -rf'
+alias rm='rm -rfI'
 alias rmtilda='rm -rf *~'
 alias delzero='rm `find . -type f -size 0k`'
 alias cltex='rm -rf *.log *.dvi *.aux *.toc *.bbl *.out *.blg *.nav *.snm *.vrb'
@@ -52,13 +52,17 @@ alias unset_omp="export OMP_DYNAMIC='' ; export OMP_NESTED='' ; export OMP_SCHED
 # _CC=$(lscpu  | grep -i 'socket(s)' |  cut -d ":" -f 2 | tr -d ' ');
 # echo $(($_AA * $_BB * $_CC ))`"
 
-export MY="/temp/$USER"
-export MYOPT="$MY/opt"
-export MYLIB="$MY/lib"
-export MYBIN="$MY/bin"
-export LD_LIBRARY_PATH="$MYLIB:$LD_LIBRARY_PATH"
-export LIBRARY_PATH="$MYLIB:$LIBRARY_PATH"
-export PATH="$MYBIN:$PATH"
+# export MY="/temp/$USER"
+# export MYOPT="$MY/opt"
+# export MYLIB="$MY/lib"
+# export MYBIN="$MY/bin"
+# export LD_LIBRARY_PATH="$MYLIB:$LD_LIBRARY_PATH"
+# export LIBRARY_PATH="$MYLIB:$LIBRARY_PATH"
+# export PATH="$MYBIN:$PATH"
+export PATH="$PATH:$HOME/usr/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/lib"
+export C_INCLUDE_PATH="$C_INCLUDE_PATH:$HOME/usr/include:$HOME/usr/include/ncurses"
+export CPLUS_INCLUDE_PATH="$C_PLUS_INCLUDE_PATH:$HOME/usr/include"
 export TERM="xterm-256color"
 export EDITOR="vim"
 export VISUAL="gedit"
@@ -67,7 +71,7 @@ export SHELL="zsh"
 export PAGER="less"
 export HOME="/home/$USER"
 
-alias tmp="cd $MY"
+# alias tmp="cd $MY"
 alias python="python3"
 alias la="ls -a"
 alias ll="ls -l"

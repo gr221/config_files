@@ -1,0 +1,32 @@
+Host *
+
+Ciphers arcfour256,arcfour128,arcfour,blowfish-cbc,aes128-cbc,aes192-cbc,cast128-cbc,aes128-ctr,aes256-cbc,aes192-ctr,aes256-ctr,3des-cbc
+BatchMode no
+CheckHostIP no
+Compression yes
+CompressionLevel 9
+ForwardAgent yes
+ForwardX11 yes
+ForwardX11Trusted yes
+PasswordAuthentication yes
+NumberOfPasswordPrompts 99
+PermitLocalCommand yes
+StrictHostKeyChecking no
+TCPKeepAlive yes
+
+Host rex2
+
+HostName rex2.uni-regensburg.de
+User frm60152
+
+Host rex1
+
+HostName rex1.uni-regensburg.de
+User frm60152
+
+Host phy
+
+HostName phy300.uni-regensburg.de
+User frm60152
+ProxyCommand ssh rex2 nc -w 1 %h %p 
+ClearAllForwardings yes
