@@ -12,8 +12,7 @@ set autoindent
 set expandtab		"Use spaces instead of tabs
 "set foldmethod=syntax   "Set folding according to syntax
 set softtabstop =4 	"Tab indents 4 spaces
-set shiftwidth =4 	" >> indents 4 spaces
-set shiftround 		" >> indents to next multiple of shiftwidth
+set shiftwidth =4 	" >> indents 4 spaces set shiftround 		" >> indents to next multiple of shiftwidth
 
 set hidden 		"Switch between buffers without having to safe first
 set laststatus =2 	"Always show status line
@@ -88,3 +87,8 @@ let g:Tex_ShowErrorContext = 0
 
 autocmd BufRead,BufNewFile *.cls set filetype=tex
 autocmd BufRead,BufNewFile *.tex set filetype=tex
+
+" Ultisnips stuff
+let g:UltiSnipsEditSplit = 'context'
+let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/mysnippets"]
+let g:UltiSnipsSnippetDir=[$HOME."/.vim/mysnippets"]
