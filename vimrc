@@ -32,9 +32,13 @@ set wrapscan		"searches wrap around
 set report 	=0	"report changed lines
 set synmaxcol	=200	"Only highlight first 200 columns
 
+colorscheme PaperColor
+
+" Expand the directory the current buffer is saved in
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 "Remap next and previous tab
-nnoremap <F7> :tabprevious<CR>
-nnoremap <F8> :tabnext<CR>
+" nnoremap <F7> :tabprevious<CR>
+" nnoremap <F8> :tabnext<CR>
 
 " Recommended settings of syntastic
 set statusline+=%#warningmsg#
@@ -55,8 +59,11 @@ noremap <C-w>f :SyntasticToggleMode<CR>
 let g:syntastic_cpp_compiler ='g++'
 let g:syntastic_cpp_compiler_options = ' -std=c+11 -stdlib=libc++'
 
-"Colorscheme
-colorscheme 256-jungle
+" better split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Unmap the arrow keays
 no <down> <Nop>
@@ -83,7 +90,9 @@ autocmd InsertLeave * let &l:foldmethod=w:last_fdm
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
+let g:vimtex_quickfix_mode = 0
 let g:Tex_ShowErrorContext = 0
+
 
 autocmd BufRead,BufNewFile *.cls set filetype=tex
 autocmd BufRead,BufNewFile *.tex set filetype=tex
@@ -92,3 +101,7 @@ autocmd BufRead,BufNewFile *.tex set filetype=tex
 let g:UltiSnipsEditSplit = 'context'
 let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/mysnippets"]
 let g:UltiSnipsSnippetDir=[$HOME."/.vim/mysnippets"]
+
+" " YouCompleteMe
+" let g:ycm_key_list_select_completion=[]
+" let g:ycm_key_list_previous_completion=[]

@@ -80,6 +80,8 @@ alias sound="amixer set Master unmute"
 alias gcc99="gcc -Wall -std=c99"
 alias ytdown="youtube-dl --ignore-errors -x --audio-format best --audio-quality 0"
 alias cond="cd /condmat/grifoni/frm60152"
+alias phd="cd /condmat/grifoni/frm60152/PhD"
+alias code="cd /condmat/grifoni/frm60152/PhD/code/THz-STM"
 # alias matlab="matlab -nosoftwareopengl"
 
 
