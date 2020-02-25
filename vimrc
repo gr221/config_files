@@ -84,6 +84,7 @@ let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
 let g:Tex_ShowErrorContext = 0
+let g:vimtex_quickfix_mode = 0
 
 autocmd BufRead,BufNewFile *.cls set filetype=tex
 autocmd BufRead,BufNewFile *.tex set filetype=tex
@@ -92,3 +93,4 @@ autocmd BufRead,BufNewFile *.tex set filetype=tex
 let g:UltiSnipsEditSplit = 'context'
 let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/mysnippets"]
 let g:UltiSnipsSnippetDir=[$HOME."/.vim/mysnippets"]
+let g:UltiSnipsExpandTrigger="<c-j>"
