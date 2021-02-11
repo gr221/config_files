@@ -83,7 +83,7 @@ alias cond="cd /condmat/grifoni/frm60152"
 alias phd="cd /condmat/grifoni/frm60152/PhD"
 alias code="cd /condmat/grifoni/frm60152/PhD/code/THz-STM"
 # alias matlab="matlab -nosoftwareopengl"
-
+alias condmount="sshfs -o auto_cache,follow_symlinks,reconnect,ServerAliveInterval=15,ServerAliveCountMax=3 frm60152@pc1011605953.ur.de:/misc/condmat/grifoni/frm60152 ~/condmat"
 
 
 
