@@ -32,7 +32,10 @@ set wrapscan		"searches wrap around
 set report 	=0	"report changed lines
 set synmaxcol	=200	"Only highlight first 200 columns
 
-colorscheme PaperColor
+set t_Co=256
+set background=light
+" colorscheme PaperColor
+colorscheme 256-jungle
 
 " Expand the directory the current buffer is saved in
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
