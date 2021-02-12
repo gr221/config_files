@@ -32,10 +32,11 @@ set wrapscan		"searches wrap around
 set report 	=0	"report changed lines
 set synmaxcol	=200	"Only highlight first 200 columns
 
-set t_Co=256
-set background=light
-" colorscheme PaperColor
-colorscheme 256-jungle
+set backupdir=~/.vim/backup//,.
+set directory=~/.vim/swp//,.
+set undodir=~/.udo//,.
+
+colorscheme PaperColor
 
 " Expand the directory the current buffer is saved in
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -96,6 +97,7 @@ let g:vimtex_view_general_options_latexmk = '--unique'
 let g:vimtex_quickfix_mode = 0
 let g:Tex_ShowErrorContext = 0
 let g:vimtex_quickfix_mode = 0
+let g:tex_flavor = 'latex'
 
 
 autocmd BufRead,BufNewFile *.cls set filetype=tex
@@ -106,6 +108,12 @@ let g:UltiSnipsEditSplit = 'context'
 let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/mysnippets"]
 let g:UltiSnipsSnippetDir=[$HOME."/.vim/mysnippets"]
 let g:UltiSnipsExpandTrigger="<c-j>"
+
+" netrw stuff
+
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 20
 
 " " YouCompleteMe
 " let g:ycm_key_list_select_completion=[]
