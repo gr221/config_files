@@ -59,8 +59,8 @@ alias unset_omp="export OMP_DYNAMIC='' ; export OMP_NESTED='' ; export OMP_SCHED
 # export LD_LIBRARY_PATH="$MYLIB:$LD_LIBRARY_PATH"
 # export LIBRARY_PATH="$MYLIB:$LIBRARY_PATH"
 # export PATH="$MYBIN:$PATH"
-export PATH="$PATH:$HOME/usr/bin"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/lib"
+export PATH="$PATH:$HOME/usr/bin:$HOME/.local/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/usr/lib:$HOME/lib/Gfortran:$HOME/.local/lib"
 export C_INCLUDE_PATH="$C_INCLUDE_PATH:$HOME/usr/include:$HOME/usr/include/ncurses"
 export CPLUS_INCLUDE_PATH="$C_PLUS_INCLUDE_PATH:$HOME/usr/include"
 export TERM="xterm-256color"
@@ -107,3 +107,6 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+export NVM_DIR="/home/moritz/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
